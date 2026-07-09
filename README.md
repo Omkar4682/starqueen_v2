@@ -1,168 +1,297 @@
-# ⭐ Star Queen Cafe — Django Web Application
+# ☕ StarQueen Cafe Management System
 
-**The Family Cafe & Bistro | Beed, Maharashtra, India**
+A modern and responsive **Cafe Management System** developed using **Python, Django, MySQL, HTML, CSS, and JavaScript**. The application enables customers to browse the menu, reserve tables, explore the cafe gallery, and place home delivery orders through an easy-to-use web interface.
 
 ---
 
-## 📁 Project Structure
+# 🚀 Project Overview
 
-```
-starqueen/
-├── manage.py
-├── requirements.txt
-├── db.sqlite3              ← auto-created after migrate
-├── starqueen/              ← Django project config
-│   ├── __init__.py
+The **StarQueen Cafe Management System** is a full-stack web application designed to simplify cafe operations and enhance the customer experience. It provides an attractive user interface for customers while allowing efficient management of menu items, reservations, gallery images, delivery orders, and delivery areas.
+
+---
+
+# ✨ Features
+
+## 🍽️ Menu Management
+
+* Dynamic menu categorized by food type
+* Best Seller section
+* Food availability management
+* Category-wise filtering
+
+## 📅 Table Reservation
+
+* Online table booking
+* Customer details collection
+* Date & time selection
+* Guest count
+* Special request support
+* Reservation status management
+
+## 🖼️ Gallery
+
+* Cafe Interior Gallery
+* Food Gallery
+* Customer Gallery
+* Image upload support
+
+## 🚚 Home Delivery
+
+* Online food ordering
+* Customer delivery details
+* Delivery area validation
+* Automatic order number generation
+* Delivery charge calculation
+* Order confirmation page
+
+## 📦 Order Tracking
+
+* Track order using Order ID
+* Order status updates
+* Complete order summary
+
+## 📍 Delivery Area Management
+
+* Delivery area configuration
+* Pincode-based delivery
+* Minimum order validation
+* Delivery charge management
+
+---
+
+# 🛠️ Technology Stack
+
+### Backend
+
+* Python
+* Django
+
+### Database
+
+* MySQL
+
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+
+### Django Features Used
+
+* Django ORM
+* Models
+* Views
+* URL Routing
+* Forms
+* Template Inheritance
+* Static Files
+* Media Files
+* Messages Framework
+* Authentication-ready Architecture
+
+---
+
+# 📂 Project Structure
+
+```text
+starqueen_v2/
+│
+├── cafe/
+│   ├── migrations/
+│   ├── models.py
+│   ├── views.py
+│   ├── forms.py
+│   ├── urls.py
+│   └── admin.py
+│
+├── starqueen/
 │   ├── settings.py
 │   ├── urls.py
+│   ├── templates/
+│   │   └── cafe/
 │   └── wsgi.py
-└── cafe/                   ← Main Django app
-    ├── __init__.py
-    ├── admin.py            ← Admin registrations
-    ├── forms.py            ← Reservation form
-    ├── models.py           ← MenuItem, Reservation, GalleryImage
-    ├── urls.py             ← App URL routes
-    ├── views.py            ← View functions (MVT)
-    ├── migrations/
-    │   ├── 0001_initial.py
-    │   └── 0002_sample_data.py   ← 30+ sample menu items
-    ├── templates/cafe/
-    │   ├── base.html       ← Navbar + Footer layout
-    │   ├── home.html       ← Hero + Bestsellers + Categories
-    │   ├── menu.html       ← Full menu with category filter
-    │   ├── gallery.html    ← Image gallery with hover zoom
-    │   ├── events.html     ← Events cards
-    │   ├── visit.html      ← Address + Google Maps embed
-    │   └── reservation.html← Booking form
-    └── static/cafe/
-        ├── css/style.css   ← Luxury black & gold theme
-        └── js/script.js    ← Scroll, particles, animations
+│
+├── static/
+│   ├── cafe/
+│   │   ├── css/
+│   │   ├── js/
+│   │   └── img/
+│
+├── media/
+├── manage.py
+└── requirements.txt
 ```
 
 ---
 
-## 🚀 Installation & Setup
+# 🗄️ Database Models
 
-### Step 1 — Clone / Extract the project
+The project contains the following database models:
+
+* MenuItem
+* Reservation
+* GalleryImage
+* DeliveryOrder
+* OrderItem
+* DeliveryArea
+
+---
+
+# ⚙️ Installation
+
+## Clone the Repository
+
 ```bash
-cd starqueen/
+git clone https://github.com/Omkar4682/starqueen_v2.git
 ```
 
-### Step 2 — Create a virtual environment (recommended)
+```bash
+cd starqueen_v2
+```
+
+---
+
+## Create Virtual Environment
+
 ```bash
 python -m venv venv
+```
 
-# Activate on Windows:
+### Activate Environment
+
+Windows
+
+```bash
 venv\Scripts\activate
+```
 
-# Activate on Mac/Linux:
+Linux / macOS
+
+```bash
 source venv/bin/activate
 ```
 
-### Step 3 — Install dependencies
+---
+
+## Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 4 — Run database migrations
+---
+
+# 🗄️ Configure MySQL Database
+
+Update the `DATABASES` section in `settings.py`:
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'your_database_name',
+        'USER': 'your_username',
+        'PASSWORD': 'your_password',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+```
+
+---
+
+## Apply Migrations
+
+```bash
+python manage.py makemigrations
+```
+
 ```bash
 python manage.py migrate
 ```
-This creates `db.sqlite3` and populates **30+ sample menu items** automatically.
 
-### Step 5 — Create an admin superuser
+---
+
+## Create Superuser
+
 ```bash
 python manage.py createsuperuser
 ```
-Follow the prompts to set a username, email, and password.
 
-### Step 6 — Run the development server
+---
+
+## Run the Development Server
+
 ```bash
 python manage.py runserver
 ```
 
-### Step 7 — Open in browser
-| URL | Page |
-|-----|------|
-| http://127.0.0.1:8000/ | Home |
-| http://127.0.0.1:8000/menu/ | Menu |
-| http://127.0.0.1:8000/gallery/ | Gallery |
-| http://127.0.0.1:8000/events/ | Events |
-| http://127.0.0.1:8000/visit/ | Visit Us |
-| http://127.0.0.1:8000/reservation/ | Reserve a Table |
-| http://127.0.0.1:8000/admin/ | Django Admin Panel |
+Open your browser and visit:
 
----
-
-## 🎨 Design Theme
-
-- **Background:** Deep Black `#0a0a0a`
-- **Accent:** Luxury Gold `#c9a84c`
-- **Typography:** Playfair Display (headings) + Montserrat (body)
-- **Style:** Luxury cafe — elegant, responsive, dark mode
-
----
-
-## 📋 Models
-
-### `MenuItem`
-| Field | Type | Notes |
-|-------|------|-------|
-| name | CharField | Item name |
-| description | TextField | Optional description |
-| price | DecimalField | In Indian Rupees (₹) |
-| category | CharField | 11 categories (choices) |
-| is_available | BooleanField | Toggle visibility |
-| is_bestseller | BooleanField | Featured on home page |
-
-### `Reservation`
-| Field | Type | Notes |
-|-------|------|-------|
-| name | CharField | Guest name |
-| phone | CharField | Contact number |
-| date | DateField | Booking date |
-| time | TimeField | Booking time |
-| guests | PositiveIntegerField | 1–20 guests |
-| special_request | TextField | Optional |
-| status | CharField | pending / confirmed / cancelled |
-
-### `GalleryImage`
-| Field | Type | Notes |
-|-------|------|-------|
-| title | CharField | Image label |
-| category | CharField | interior / food / customers |
-| image_url | URLField | Direct image URL |
-
----
-
-## ⚙️ Admin Panel
-
-Log in at `/admin/` to:
-- **Add/edit menu items** — set prices, categories, bestseller flag
-- **Manage reservations** — view bookings, update status (pending → confirmed)
-- **Add gallery images** — paste image URLs for interior/food/customer photos
-
----
-
-## 📞 Contact Details to Update
-
-Replace these placeholders in the code with your actual info:
-- `+91 XXXXX XXXXX` — phone number (in `base.html`, `visit.html`, `reservation.html`)
-- `hello@starqueencafe.com` — email (in `visit.html`)
-- Instagram/Facebook/WhatsApp links (in `base.html`, `visit.html`)
-- Google Maps embed URL (in `visit.html`) — replace with your exact location
-
----
-
-## ✅ Quick Commands Reference
-
-```bash
-python manage.py migrate          # Apply migrations
-python manage.py runserver        # Start dev server
-python manage.py createsuperuser  # Create admin user
-python manage.py collectstatic    # Collect static files (production)
+```text
+http://127.0.0.1:8000/
 ```
 
 ---
 
-*Built with Django MVT Architecture · Bootstrap 5 · SQLite · Luxury Black & Gold Design*
+# 📷 Main Modules
+
+* Home
+* Menu
+* Gallery
+* Events
+* Visit Us
+* Table Reservation
+* Home Delivery
+* Order Confirmation
+* Order Tracking
+
+---
+
+# 🎯 Learning Outcomes
+
+This project demonstrates practical knowledge of:
+
+* Django Framework
+* MySQL Database Integration
+* Django ORM
+* CRUD Operations
+* Model Relationships
+* Form Handling & Validation
+* Template Inheritance
+* Static & Media File Management
+* Session Management
+* Responsive Web Design
+* MVC (MVT) Architecture in Django
+
+---
+
+# 🚀 Future Enhancements
+
+* User Authentication
+* Online Payment Gateway
+* Email Notifications
+* SMS Notifications
+* Customer Dashboard
+* Admin Analytics Dashboard
+* Offers & Coupons
+* Reviews & Ratings
+* Wishlist
+* Search & Filter
+* Invoice Generation
+
+---
+
+# 👨‍💻 Author
+
+**Omkar Date**
+
+**GitHub:** https://github.com/Omkar4682
+
+**LinkedIn:** https://www.linkedin.com/in/omkar-date-04969435b
+
+---
+
+# 📄 License
+
+This project is developed for educational, learning, and portfolio purposes.
