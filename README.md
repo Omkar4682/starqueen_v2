@@ -87,7 +87,7 @@ The **StarQueen Cafe Management System** is a full-stack web application designe
 * Static Files
 * Media Files
 * Messages Framework
-* Authentication-ready Architecture
+
 
 ---
 
