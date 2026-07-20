@@ -1,6 +1,6 @@
 # ☕ StarQueen Cafe Management System
 
-A modern and responsive **Cafe Management System** developed using **Python, Django, MySQL, HTML, CSS, and JavaScript**. The application enables customers to browse the menu, reserve tables, explore the cafe gallery, and place home delivery orders through an easy-to-use web interface.
+A modern and responsive **Cafe Management System** developed using **Python, Django, MySQL, HTML, CSS, and JavaScript**. The application enables customers to browse the menu, reserve tables, explore the cafe gallery, and place home delivery orders through an easy-to-use web interface
 
 ---
 
