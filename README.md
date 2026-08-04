@@ -6,7 +6,7 @@ A modern and responsive **Cafe Management System** developed using **Python, Dja
 
 # 🚀 Project Overview
 
-The **StarQueen Cafe Management System** is a full-stack web application designed to simplify cafe operations and enhance the customer experience. It provides an attractive user interface for customers while allowing efficient management of menu items, reservations, gallery images, delivery orders, and delivery areas.
+The **StarQueen Cafe Management System** is a full-stack web application designed to simplify cafe operations and enhance the customer experience. It provides an attractive and user friendly interface for customers while allowing efficient management of menu items, reservations, gallery images, delivery orders, and delivery areas.
 
 ---
 
