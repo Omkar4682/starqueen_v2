@@ -55,7 +55,7 @@ The **StarQueen Cafe Management System** is a full-stack web application designe
 * Delivery area configuration
 * Pincode-based delivery
 * Minimum order validation
-* Delivery charge management
+* Delivery charges management
 
 ---
 
