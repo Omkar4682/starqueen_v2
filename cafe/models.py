@@ -73,7 +73,7 @@ class GalleryImage(models.Model):
         return f"{self.title} ({self.get_category_display()})"
 
     def get_image(self):
-        """Returns uploaded image or fallback URL"""
+        """Return to the main page or url"""
         if self.image:
             return self.image.url
         return self.image_url or ''
